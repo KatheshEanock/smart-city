@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, Input } from '@angular/core';
+import { GraficoModel } from './app.model';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'smart-city';
+ // @Input() List: Array<GraficoModel>;
+
 }
