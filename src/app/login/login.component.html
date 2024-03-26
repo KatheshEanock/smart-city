@@ -24,7 +24,7 @@
         </div>
       </div>
 
-      <button type="submit" [disabled]="!registrationForm.valid" class="btn btn-primary">Login</button>
+      <button type="submit" [disabled]="!registrationForm.valid" class="btn btn-primary">Login</button> | <a routerLink="">Create new account</a>
     </form>
     <div class="alret alert-danger" *ngIf="error">
       <p> {{error}}</p>

@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Subject, catchError, tap, throwError } from 'rxjs';
+import { Subject, catchError, map, tap, throwError } from 'rxjs';
 import { User } from './user.model';
 
 interface  IUserData {
@@ -15,9 +15,10 @@ interface  IUserData {
   providedIn: 'root'
 })
 export class AuthService {
+  user=new Subject<User>()
+  isLogIn=false
   constructor (private http:HttpClient){}
 
-   user=new Subject<User>()
 
   signUpData(email,password){
   return this.http.post<IUserData>("https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAPusAzpWlOdPq-8_dGs9XAdUdVjambGPg",{
@@ -32,7 +33,13 @@ export class AuthService {
        email:email,
         password:password,
         returnSecureToken:true
-     }).pipe(catchError(this.errorHandler))
+     }).pipe(map(responce=>{
+      if(responce && responce.idToken){
+        this.isLogIn=true
+        localStorage.setItem('token',responce.idToken);
+        return true;
+      }return false;
+     }),catchError(this.errorHandler))
   }
   private errorHandler(errRes:HttpErrorResponse){
     let errorMessage='error occurred'
@@ -52,6 +59,15 @@ export class AuthService {
     default:
          errorMessage= errRes.error.error.message
     }return throwError(errorMessage)
+  }
+
+  logOut(){
+    this.isLogIn=false;
+    localStorage.removeItem("token");
+  }
+
+  isLogedIn(){
+    return this.isLogIn
   }
 }
 

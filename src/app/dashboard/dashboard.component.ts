@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GraficoModel } from '../app.model';
+import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -20,7 +22,7 @@ export class DashboardComponent implements OnInit  {
     public Total=0;
     public MaxHeight= 100;
 
-    constructor() { }
+    constructor(private authService:AuthService , private router:Router) { }
 
     ngOnInit(): void {
       this.MontarGrafico();
@@ -53,4 +55,9 @@ export class DashboardComponent implements OnInit  {
       }]
     }
 
+
+    logout(){
+         this.authService.logOut()
+         this.router.navigate(['login'])
+    }
 }
