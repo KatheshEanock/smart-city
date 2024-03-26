@@ -9,13 +9,23 @@ import { Router } from '@angular/router';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit  {
-    date=Date()
+    date=Date();
+    functioningLight:number=986;
+    notFunctioningLight:number=142;
+    smartBins={
+      bins:21,
+      trashLevel:3,
+      trash_level:18
+    };
+    cctv:number=63;
+    activeCctv:number=62;
+    wifi:number=102;
     public Animals: Array<GraficoModel> = [
-      {Value: 500, Color:'#498B94', Size:'', Legend:'06.00 AM'},
-      {Value: 250, Color:'Violet', Size:'', Legend:'12.00 PM'},
-      {Value: 107, Color:'MediumSeaGreen', Size:'', Legend:'06.00 PM'},
-      {Value: 190, Color:'Orange', Size:'', Legend:'NIGHT'},
-      {Value: 400, Color:'red', Size:'', Legend:'MID-NIGHT'},
+      {Value: 500, Color:'#498B94', Size:''},
+      {Value: 250, Color:'Violet', Size:''},
+      {Value: 107, Color:'MediumSeaGreen', Size:''},
+      {Value: 190, Color:'Orange', Size:''},
+      {Value: 400, Color:'red', Size:''},
 
     ];
 

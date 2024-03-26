@@ -138,8 +138,8 @@
  Total lights
   </div>
   <div style="float: right;">
-        <h5>986</h5> Functioning <br>
-        <h5>142</h5> Not Functioning
+        <h5>{{functioningLight}}  </h5> Functioning <br>
+        <h5>{{notFunctioningLight}} </h5> Not Functioning
   </div>
   <div style="margin-top: 100px;">
     <img src="../../assets/sun.png" width="8%" alt=""> 06:50
@@ -151,13 +151,13 @@
   <img src="../../assets/delete_FILL0_wght400_GRAD0_opsz24.png" alt="delete icon" width="50px">
   <div style="float: left;">
 
-    <h2> 21 </h2> smart bins
+    <h2> {{smartBins.bins}} </h2> smart bins
   </div>
    <div style="float: right; padding-bottom: 30%;">
 
-     <h6>3</h6> Trash level > 75%
+     <h6> {{smartBins.trashLevel}} </h6> Trash level > 75%
 
-    <h6>18</h6> Trash level >50%
+    <h6>{{smartBins.trash_level}} </h6> Trash level > 50%
    </div>
 
     <span  class="read-more"> <a href="" style="border: none;">Read<img src="../../assets/read_more_FILL0_wght400_GRAD0_opsz24.png" alt="readmore"></a></span>
@@ -221,7 +221,6 @@
   <div class="grafico">
 <div class="content">
 <div class="bars" *ngFor="let item of Animals">
-<!-- <span>{{item.Value}}</span> -->
 <div class="bar" [style.background-color]="item.Color" [style.height]='item.Size'></div>
 </div>
 </div>
@@ -261,13 +260,13 @@
           <span > <a href="" style="border: none;">Read<img src="../../assets/read_more_FILL0_wght400_GRAD0_opsz24.png" alt="readmore"></a></span>
 
                        </div>
-                       <div class="container9"> 63 cctv & 62 active IP
+                       <div class="container9"> {{cctv}} cctv & {{activeCctv}} active IP
                         <img src="../../assets/cctv-camera.png" alt="cctv" width="50px" >
                         <span > <a href="" style="border: none;">Read<img src="../../assets/read_more_FILL0_wght400_GRAD0_opsz24.png" alt="readmore"></a></span>
 
                        </div>
                        <div class="container10">
-                        <img src="../../assets/wifi_FILL0_wght400_GRAD0_opsz24.png" alt=""> 102 Wifi hotspot
+                        <img src="../../assets/wifi_FILL0_wght400_GRAD0_opsz24.png" alt=""> {{wifi}} Wifi hotspot
                         <span > <a href="" style="border: none;">Read<img src="../../assets/read_more_FILL0_wght400_GRAD0_opsz24.png" alt="readmore"></a></span>
 
                      </div>

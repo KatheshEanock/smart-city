@@ -135,26 +135,6 @@ $MaxHeight: 100px;
     height: $MaxHeight;
 }
 
-.grafico .content span{
-    font-family: 'Roboto';
-    font-size: 13px;
-    color: #707070;
-}
-
-.grafico .legends{
-    display: flex;
-    flex-direction: row;
-    color: #707070;
-    font-family: 'Roboto';
-    font-size: 12px;
-    text-align: center;
-}
-
-.grafico .legends span{
-    width: $Largura-Barra;
-    margin:0 15px;
-}
-
 .grafico .bars{
     display: flex;
     flex-direction: column;
